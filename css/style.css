@@ -101,7 +101,6 @@ header{
     display: flex;
     justify-content: center;
     position: relative;
-    right: 50px;
 }
 
 .header__item{
@@ -433,4 +432,96 @@ hr{
     margin: 5px;
     text-align: center;
     padding: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .header__logo {
+        font-size: 22px;
+        margin: 8px 0 0 20px;
+    }
+    .item2 {
+        display: none;
+    }
+    .item3 {
+        display: none;
+    }
+    .profile__title {
+        font-size: 18px;
+        text-align: center;
+    }
+    .profile__content {
+        font-size: 14px;
+        text-align: center;
+    }
+    .stack {
+        display: contents;
+        width: 0%;
+        margin: auto;
+        padding: 0px;
+        position: relative;
+        top: -30px;
+        border-radius: 10px;
+        background-color: white;
+        z-index: 1;
+    }
+    .stack__designer {
+        border-right: none;
+    }
+    .footer__title {
+        font-size: 24px;
+    }
+    .footer__content {
+        font-size: 24px;
+        text-align: center;
+        width: 90%;
+    }
+    .footer__form {
+        width: 70%;
+        display: contents;
+    }
+    .footer__email {
+        padding: 14px;
+        width: 60%;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .footer__btn {
+        border-radius: 30px;
+        padding: 10px;
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+    .card__title {
+        font-size: 13px;
+        margin-bottom: 0px;
+    }
+    .card--more {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .contact {
+        width: 90%;
+    }
+    .contact__title {
+        font-size: 40px;
+    }
+    .contact__name {
+        width: 100%;
+    }
+    .contact__email {
+        width: 100%;
+    }
+    .contact__btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .login {
+        width: auto;
+    }
 }
