@@ -485,12 +485,12 @@ hr{
     }
     .card__title {
         font-size: 13px;
-        margin-bottom: 0px;
     }
     .card--more {
         padding: 8px;
         font-size: 14px;
     }
+
     .contact {
         width: 90%;
     }
