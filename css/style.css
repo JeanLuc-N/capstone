@@ -598,6 +598,7 @@ hr{
     color: white;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 
 
 }
@@ -743,7 +744,28 @@ hr{
     font-family: Antic;
     font-size: 20px;
     width: 200px;
+    cursor: pointer;
   }
+
+  .error{
+      color: red;
+      font-family: Antic;
+  }
+
+  .fa-trash{
+      color: red;
+  }
+
+  .fa-pencil-square-o{
+      color: dodgerblue;
+  }
+  .action__view{
+      color: green;
+      font-weight: 500;
+  }
+.more > a{
+    text-decoration: none;
+}
   
 
 @media only screen and (max-width: 768px) {
