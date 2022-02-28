@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>blog</title>
 </head>
-<body>
+<body onload="readBlog()">
     <header class="admin-header">
         <div class="admin">
             <img class="admin__image" src="../assets/luc.jpeg" alt="admin" width="40px" height="40px">
@@ -34,8 +34,8 @@
                     <button class="add-blog">add blog</button>
                 </div>
             </div>
-            <div class="blog-cart">
-                <table class="blogs">
+            <div class="blog-cart" id="blog-cart">
+                <table class="blogs" id="row-table">
                     <tr>
                         <th><input type="checkbox"></th>
                         <th>title</th>
@@ -43,71 +43,7 @@
                         <th>date</th>
                         <th>action</th>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>VScode</td>
-                        <td>VScode description</td>
-                        <td>10/02/2020</td>
-                        <td>
-                            <div class="action">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                <div class="more">
-                                    <a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href=""><span class="action__view">view</span></a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>VScode</td>
-                        <td>VScode description</td>
-                        <td>10/02/2020</td>
-                        <td>
-                            <div class="action">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                <div class="more">
-                                    <a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href=""><span class="action__view">view</span></a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>VScode</td>
-                        <td>VScode description</td>
-                        <td>10/02/2020</td>
-                        <td>
-                            <div class="action">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                <div class="more">
-                                    <a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href=""><span class="action__view">view</span></a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>VScode</td>
-                        <td>VScode description</td>
-                        <td>10/02/2020</td>
-                        <td>
-                            <div class="action">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                <div class="more">
-                                    <a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href=""><span class="action__view">view</span></a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                </table>    
             </div>
         </main>
     </div>
@@ -118,18 +54,18 @@
               <h2>Add Blog</h2>
             </div>
             <div class="modal-body">
-                <form class="blog-form blog--add">
+                <form class="blog-form blog--add" id="add-blog">
                     <div class="blog__field blog--title">
-                        <input type="text" class="blog__title" placeholder="title">
+                        <input type="text" class="blog__title" id="title" placeholder="title">
                     </div>
                     <div class="blog__field blog--summary">
-                        <input type="text" class="blog__summary" placeholder="summary">
+                        <input type="text" class="blog__summary" id="summary" placeholder="summary">
                     </div>
                     <div class="blog__field blog--image">
-                        <input type="file" class="blog__img">
+                        <input type="file" class="blog__img" id="file">
                     </div>
                     <div class="blog__field blog--content">
-                        <textarea name="" placeholder="content" class="blog__content" cols="30" rows="10"></textarea>
+                        <textarea name="" placeholder="content" class="blog__content" id="subject" cols="30" rows="10"></textarea>
                     </div>
                     <div class="blog__field">
                         <input type="submit" class="blog__btn" value="save">
@@ -138,6 +74,11 @@
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/config.js"></script>
 </body>
 </html>

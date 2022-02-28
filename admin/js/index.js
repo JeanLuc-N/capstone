@@ -1,5 +1,35 @@
 // import { showError } from '../../js/index.js';
 
+
+
+var title,summary,subject,file;
+var ImgUrl;
+var files=[];
+var reader = new FileReader();
+var d = new Date();
+var t = d.getTime();
+var counter = t;
+var today = new Date();
+var dat = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+function readForm (){
+    title = document.getElementById("title").value;
+    summary = document.getElementById("summary").value;
+    subject = document.getElementById("subject").value;
+    file = document.getElementById('file').files[0];
+    console.log(title,summary,subject);
+}
+function resetForm (){
+    title = document.getElementById("title").value="";
+    summary = document.getElementById("summary").value="";
+    subject = document.getElementById("subject").value="";
+    file = document.getElementById('file').value="";
+}
+
+
+
+
+
+//validation
 document.addEventListener('DOMContentLoaded',()=>{
 
     function validateRange(myValue, minLength, maxLength){
@@ -67,6 +97,36 @@ document.addEventListener('DOMContentLoaded',()=>{
         if(content.length == 0){
             showError('Please enter your blog content', 'blog--content');
         }
+        else{
+                 //console.log(title,summary,subject);
+                readForm();
+                counter+=1;
+                let storageRef = firebase.storage().ref('blog');
+                let file = document.getElementById('file').files[0];
+                let thisRef = storageRef.child(file.name);
+                thisRef.put(file).then(res=> {
+                    console.log('upload success');
+                    console.log(thisRef);
+                    //alert("upload success");
+                }).catch(e=> {
+                    console.log('Error'+e);
+                })
+                storageRef.child(file.name).getDownloadURL().then(url=> {
+                    console.log(url)
+                firebase.database().ref('Blogs/'+counter).set({
+                            id:counter,
+                            title:title,
+                            summary: summary,
+                            link:url,
+                            date: dat,
+                            subject: subject,
+
+                        });
+                        resetForm();
+                        alert('BLog added');
+                    }).catch(e=> {
+                        console.log(e)});
+        }            
     });
 
     document.querySelector('.close').addEventListener('click', ()=>{
@@ -75,3 +135,31 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     
 })
+
+function readBlog()
+{
+    var blog=firebase.database().ref("Blogs/");
+    blog.on("child_added",function(data){
+        var blogValue=data.val();
+        var cat = blogValue.title;   
+        console.log("hello");
+    document.getElementById("row-table").innerHTML+=`
+                    <tr>    
+                        <td><input type="checkbox"></td>
+                        <td>${blogValue.title}</td>
+                        <td>${blogValue.summary}</td>
+                        <td>${blogValue.date}</td>
+                        <td>
+                            <div class="action">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                <div class="more">
+                                    <a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href=""><span class="action__view">view</span></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>       
+                `
+    })    
+}
