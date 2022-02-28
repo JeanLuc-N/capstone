@@ -36,3 +36,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     })
 })
+
+function readMessage()
+{
+    var msg=firebase.database().ref("Contact/");
+    msg.on("child_added",function(data){
+        var msgValue=data.val();
+    document.querySelector('.dash-content').innerHTML+=`
+                        <div class="message-cart">
+                        <div class="message__header">
+                           <div class="name-row">
+                            <h4>Name</h4>
+                            <span>${msgValue.name}</span>
+                           </div> 
+                            <div class="date-row">
+                            <h4> </h4>
+                            <div class="left">
+
+                                <i class="fa fa-calendar" aria-hidden="true"></i><span>${msgValue.date}</span>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="message__content">
+                        <div class="name-row">
+                        <h5>Subject</h5>
+                        <p>${msgValue.subject}</p>
+                        </div>
+                            <button class="message__btn">Read</button>
+                        </div>
+                    </div>
+                `
+   })     
+}

@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/e836a072b8.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>blog</title>
 </head>
-<body>
+<body onload="readMessage()">
     <header class="admin-header">
         <div class="admin">
             <img class="admin__image" src="../assets/luc.jpeg" alt="admin" width="40px" height="40px">
@@ -29,36 +29,7 @@
             <div class="dash-title">
                 <h1>messages</h1>
             </div>
-            <div class="message-cart">
-                <div class="message__header">
-                    <span>sender</span>
-                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
-                </div>
-                <div class="message__content">
-                    <p>message content</p>
-                    <button class="message__btn">Reply</button>
-                </div>
-            </div>
-            <div class="message-cart">
-                <div class="message__header">
-                    <span>sender</span>
-                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
-                </div>
-                <div class="message__content">
-                    <p>message content</p>
-                    <button class="message__btn">Reply</button>
-                </div>
-            </div>
-            <div class="message-cart">
-                <div class="message__header">
-                    <span>sender</span>
-                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
-                </div>
-                <div class="message__content">
-                    <p>message content</p>
-                    <button class="message__btn">Reply</button>
-                </div>
-            </div>
+            
         </main>
     </div>
     <div class="modal">
@@ -80,6 +51,11 @@
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="js/message.js"></script>
+    <script src="js/config.js"></script>
 </body>
 </html>
