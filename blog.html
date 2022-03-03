@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Blog</title>
 </head>
 <body>
@@ -20,10 +21,8 @@
                 <li class="header__item"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="social item3">
-            <a href="" class="social__link"><img src="assets/jam_facebook-circle.png" alt="" class="social__img"></a>
-            <a href="" class="social__link"><img src="assets/tabler_brand-instagram.png" alt="" class="social__img"></a>
-            <a href="" class="social__link"><img src="assets/Group.png" alt="" class="social__img"></a>
+        <div class="div-login item3">
+            <a class="login_link" href="login.html">Login</a>
         </div>
 
         <section class="profile item4">
@@ -37,36 +36,7 @@
         </section>
     </header>
     <main class="container">
-        <article class="card">
-            <div class="card__image">
-                <img src="assets/luc.jpeg" alt="">
-            </div>
-            <div class="card__content">
-                <h1 class="card__title">What does DSL Mean on Facebook</h1>
-                <p class="card__description">The popularity of online social networks has increased a lot and the attraction of FaceBook has attracted almost everyone. The craziness ha...</p>
-                <button class="card--more">READ MORE</button>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card__image">
-                <img src="assets/luc.jpeg" alt="">
-            </div>
-            <div class="card__content">
-                <h1 class="card__title">What does DSL Mean on Facebook</h1>
-                <p class="card__description">The popularity of online social networks has increased a lot and the attraction of FaceBook has attracted almost everyone. The craziness ha...</p>
-                <button class="card--more">READ MORE</button>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card__image">
-                <img src="assets/luc.jpeg" alt="">
-            </div>
-            <div class="card__content">
-                <h1 class="card__title">What does DSL Mean on Facebook</h1>
-                <p class="card__description">The popularity of online social networks has increased a lot and the attraction of FaceBook has attracted almost everyone. The craziness ha...</p>
-                <button class="card--more">READ MORE</button>
-            </div>
-        </article>
+
     </main>
     <footer>
         <div class="footer__title">
@@ -80,12 +50,17 @@
             <input type="submit"  class="footer__btn" value="subscribe">
         </form>
         <hr>
-        <div class="social">
-            <a href="" class="social__link"><img src="assets/jam_facebook-circle.png" alt="" class="social__img"></a>
-            <a href="" class="social__link"><img src="assets/tabler_brand-instagram.png" alt="" class="social__img"></a>
-            <a href="" class="social__link"><img src="assets/Group.png" alt="" class="social__img"></a>
+        <div class="foot">
+            <a class="ico" href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a class="ico" href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a class="ico" href="#"><i class="fab fa-linkedin fa-2x"></i></a>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="js/index.js"></script>
+    <script src="admin/js/config.js"></script>
 </body>
 </html>
