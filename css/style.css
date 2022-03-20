@@ -116,6 +116,43 @@
     font-size: 30px;
 }
 
+.comment{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.comment > button{
+    background-color: #0078E7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: Antic;
+    font-size: 20px;
+    cursor: pointer;
+    width: 20%;
+
+}
+
+.reply{
+    border-bottom: 2px solid #0078E7;
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+.reply-email{
+    font-family: Antic;
+    font-size: 30px;
+    color: #0078E7;
+}
+
+.reply-comment{
+    font-size: 24px;
+}
+
+
+
 .header__item > a{
     text-decoration: none;
 }
@@ -263,6 +300,7 @@
     border-radius: 5px;
     font-family: Antic;
     width: 80%;
+    margin: 3px;
 }
 
 
@@ -275,7 +313,7 @@
     padding: 15px;
     font-family: Antic;
     font-size: 20px;
-    width: 30%;
+    width: 35%;
 
 }
 

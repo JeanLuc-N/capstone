@@ -131,7 +131,6 @@ document.addEventListener('DOMContentLoaded',()=>{
            thisRef.put(file).then(res=> {
                console.log('upload success');
                console.log(thisRef);
-               //alert("upload success");
            }).catch(e=> {
                console.log('Error'+e);
            })
@@ -143,7 +142,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                        summary: summary,
                        link:url,
                        date: dat,
-                       subject: subject,
+                       subject: content,
 
                    });
                    resetForm();
@@ -231,13 +230,12 @@ function updateBlog(id,title,summary,subject,link){
     var title=document.getElementById("etitle").value;
     var summary=document.getElementById("esummary").value;
     var subject=document.getElementById("esubject").value;
-    var link= "https://firebasestorage.googleapis.com/v0/b/test-javascript-20767.appspot.com/o/Images%2Ftest1.png?alt=media&token=3f61447d-6d7f-45b8-ac84-750e99c8866b";
-    alert(id);
+    var link= "https://firebasestorage.googleapis.com/v0/b/capstone-68204.appspot.com/o/blog%2Fmarvel-superhero-shadow-and-reflection-dcze0xzkpz8ozr49.jpg?alt=media&token=f9c997c3-626a-458d-8a7f-b12dd81f545e";
+    //alert(id);
    firebase.database().ref("Blogs/"+id).update({
         id:id,
         title:title,
         summary: summary,
-        link:link,
         date: dat,
         subject: subject
    });
@@ -251,3 +249,28 @@ logoutBtn.addEventListener('click', e=> {
     console.log("User signout!");
     window.location.replace('../index.html');
 })
+
+
+function getcount(){
+    firebase.database().ref('Blogs').on("value",function(snapshot) {
+        var counting= snapshot.numChildren();
+        document.getElementById("summary1").innerHTML+=`
+                <div class="summary__item">
+                <i class="fa fa-rss blog fa-lg" aria-hidden="true"></i>
+                <div class="summary__title"><span>blogs</span></div>
+                <div class="blog__value"><span>${counting}</span></div>
+            </div>
+                    `
+    });
+    firebase.database().ref('Contact').on("value",function(snapshot) {
+        var countin= snapshot.numChildren();
+        document.getElementById("summary").innerHTML+=`
+                <div class="summary__item">
+                <i class="fa fa-comment-o message fa-10x" aria-hidden="true"></i>
+                <div class="summary__title"><span>messages</span></div>
+                <div class="blog__value"><span>${countin}</span></div>
+            </div>
+                    `
+    })
+
+}

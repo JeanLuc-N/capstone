@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>overview</title>
 </head>
-<body>
+    <body onload="getcount()">
     <header class="admin-header">
         <div class="admin">
             <img class="admin__image" src="../assets/luc.jpeg" alt="admin" width="40px" height="40px">
@@ -26,19 +26,11 @@
             </ul>
         </nav>
         <main class="dash-content w2">
-            <section class="summary">
-                <div class="summary__item">
-                    <i class="fa fa-comment-o message fa-10x" aria-hidden="true"></i>
-                    <div class="summary__title"><span>messages</span></div>
-                    <div class="summary__value"><span>17</span></div>
-                </div>
+            <section class="summary" id="summary">
+                
             </section>
-            <section class="summary">
-                <div class="summary__item">
-                    <i class="fa fa-rss blog fa-lg" aria-hidden="true"></i>
-                    <div class="summary__title"><span>blogs</span></div>
-                    <div class="summary__value"><span>8</span></div>
-                </div>
+            <section class="summary" id="summary1">
+                
             </section>
         </main>
     </div>
